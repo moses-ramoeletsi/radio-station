@@ -8,10 +8,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $description = $_POST['description'];
     $location = $_POST['location'];
 
-    $stmt = $pdo->prepare("INSERT INTO news (title, time, date,description,location ) VALUES (?, ?, ?, ?, ?)");
-    $stmt->execute([$title, $time, $date, $description,$location]);
+    $stmt = $pdo->prepare("INSERT INTO news (title, time, date, description, location, created_date) VALUES (?, ?, ?, ?, ?, CURRENT_TIMESTAMP)");
+    $stmt->execute([$title, $time, $date, $description, $location]);
 
-    header("Location: admin.php");
+    header("Location: news.php");
     exit();
 }
 ?>
@@ -25,8 +25,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 <body>
 <?php include ('admin_header.php'); ?>    
     <h1>Add News</h1>
-    <a href="admin.php">Back</a>
+    <a href="news.php">Back</a>
     <form action="add_news.php" method="post">
+   
         Title: <input type="text" name="title"><br>
         Date: <input type="date" name="date"><br>
         Time: <input type="time" name="time"><br>

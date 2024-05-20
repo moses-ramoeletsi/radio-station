@@ -7,20 +7,21 @@
     <title>News</title>
 </head>
 <body>
-<?php include ('user_header.php'); ?>
+<?php include ('admin_header.php'); ?>
     <h1>Latest News</h1>
-    <a href="home.php">Back</a>
+    <a href="admin.php">Back</a>
+    <button onclick="location.href= 'add_news.php'">Add News</button>
     <?php
-   $stmt = $pdo->query("SELECT * FROM news ORDER BY news_id DESC");
+    $stmt = $pdo->query("SELECT * FROM news");
     $news = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
     foreach ($news as $news_updates) {
         echo "<h2>{$news_updates['title']}</h2>";
-        echo "<h4>Posted on: {$news_updates['created_date']}</h4>";
+        echo "<h3>Posted on: {$news_updates['created_date']}</h3>";
         echo "<p>{$news_updates['time']}</p>";
         echo "<p>{$news_updates['date']}</p>";
-        echo "<p>Price: {$news_updates['description']}</p>";
-        echo "<p>Price: {$news_updates['location']}</p>";
+        echo "<p>Description: {$news_updates['description']}</p>";
+        echo "<p>Location: {$news_updates['location']}</p>";
     }
     ?>
 </body>

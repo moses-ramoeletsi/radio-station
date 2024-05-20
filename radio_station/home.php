@@ -20,7 +20,23 @@
         padding: 10px;
         margin-right: 10px;
         min-width: 200px;
+
+        
     }
+
+    .news-item {
+            border: 1px solid #ccc;
+            padding: 10px;
+            margin: 10px 0;
+        }
+        .news-item h3 {
+            margin: 0;
+            color: #333;
+        }
+        .news-item h4 {
+            margin: 5px 0;
+            color: #666;
+        }
 </style>
 
 </head>
@@ -50,6 +66,42 @@
         }
         ?>
     </div>
+
+    
+<h2>Today's News</h2>
+<?php
+// Query for today's news
+$stmt_today = $pdo->query("SELECT * FROM news WHERE DATE(created_date) = CURDATE()");
+$today_news = $stmt_today->fetchAll(PDO::FETCH_ASSOC);
+
+if (count($today_news) > 0) {
+    foreach ($today_news as $news_updates) {
+        echo "<div class='news-item'>";
+        echo "<h3>{$news_updates['title']}</h3>";
+        echo "<h4>Posted on: {$news_updates['created_date']}</h4>";
+        echo "<p>Time: {$news_updates['time']}</p>";
+        echo "<p>Date: {$news_updates['date']}</p>";
+        echo "<p>Description: {$news_updates['description']}</p>";
+        echo "<p>Location: {$news_updates['location']}</p>";
+        echo "</div>";
+    }
+} else {
+    // Query for yesterday's news if no news is found for today
+    $stmt_yesterday = $pdo->query("SELECT * FROM news WHERE DATE(created_date) = CURDATE() - INTERVAL 1 DAY");
+    $yesterday_news = $stmt_yesterday->fetchAll(PDO::FETCH_ASSOC);
+
+    foreach ($yesterday_news as $news_updates) {
+        echo "<div class='news-item'>";
+        echo "<h3>{$news_updates['title']}</h3>";
+        echo "<h4>Posted on: {$news_updates['created_date']}</h4>";
+        echo "<p>Time: {$news_updates['time']}</p>";
+        echo "<p>Date: {$news_updates['date']}</p>";
+        echo "<p>Description: {$news_updates['description']}</p>";
+        echo "<p>Location: {$news_updates['location']}</p>";
+        echo "</div>";
+    }
+}
+?>
     <?php include ('../footer.php'); ?>
 
 </body>
