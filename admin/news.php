@@ -9,10 +9,9 @@
 <body>
 <?php include ('admin_header.php'); ?>
     <h1>Latest News</h1>
-    <a href="admin.php">Back</a>
     <button onclick="location.href= 'add_news.php'">Add News</button>
     <?php
-    $stmt = $pdo->query("SELECT * FROM news");
+    $stmt = $pdo->query("SELECT * FROM news ORDER BY news_id DESC");
     $news = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
     foreach ($news as $news_updates) {
@@ -22,6 +21,19 @@
         echo "<p>{$news_updates['date']}</p>";
         echo "<p>Description: {$news_updates['description']}</p>";
         echo "<p>Location: {$news_updates['location']}</p>";
+        echo "<a href='edit_news.php?news_id={$news_updates['news_id']}'>Edit</a>";
+        echo " | ";
+        echo "<form id='deleteForm{$news_updates['news_id']}' action='delete_news.php' method='post' style='display: inline;'>";
+        echo "<input type='hidden' name='news_id' value='{$news_updates['news_id']}'>";
+        echo "<button type='button' onclick='confirmDelete({$news_updates['news_id']})'>Delete</button>";
+        echo "</form>";
+        echo "<script>";
+        echo "function confirmDelete(newsId) {";
+        echo "    if (confirm('Are you sure you want to delete this schedule?')) {";
+        echo "        document.getElementById('deleteForm' + newsId).submit();";
+        echo "    }";
+        echo "}";
+        echo "</script>";
     }
     ?>
 </body>

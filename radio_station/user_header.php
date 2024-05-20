@@ -157,6 +157,7 @@
                 Radio Station
             </div>
             <div class="desktop-nav">
+                <a href="home.php">Home</a>
                 <a href="news.php">Latest news</a>
                 <a href="schedule.php">Schedule</a>
                 <a href="advertisement.php">Advertisement</a>
@@ -165,6 +166,7 @@
             </div>
         </div>
         <div class="mobile-nav" id="mobile-nav">
+            <a href="home.php">Home</a>
             <a href="news.php">Latest news</a>
             <a href="schedule.php">Schedule</a>
             <a href="advertisement.php">Advertisement</a>

@@ -9,7 +9,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $location = $_POST['location'];
     $contacts = $_POST['contacts'];
     
-    $stmt = $pdo->prepare("INSERT INTO advertisements (name, product_name,  price,description, location, contacts) VALUES (?, ?, ?, ?, ?, ?)");
+    $stmt = $pdo->prepare("INSERT INTO advertisements (name, product_name,  price,description, location, contacts, created_date) VALUES (?, ?, ?, ?, ?, ?, CURRENT_TIMESTAMP)");
     if ($stmt->execute([$name, $product_name,$price , $description, $location, $contacts])) {
         header("Location: advertise.php");
         exit();

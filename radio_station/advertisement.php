@@ -13,10 +13,11 @@
     <a href="home.php">Back</a>
 
     <?php
-    $stmt = $pdo->query("SELECT * FROM advertisements");
+    $stmt = $pdo->query("SELECT * FROM advertisements ORDER BY advert_id DESC");
     $advertisements = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
     foreach ($advertisements as $adverts) {
+        echo "<h4>{$adverts['created_date']}</h4>";
         echo "<h2>{$adverts['name']}</h2>";
         echo "<p>{$adverts['product_name']}</p>";
         echo "<p>{$adverts['price']}</p>";

@@ -23,7 +23,6 @@
 <body>
 <?php include ('admin_header.php'); ?>    
     <h1>Schedule</h1>
-    <a href="admin.php">Back</a><br>
     <button onclick="location.href= 'add_programs_schedule.php'">Add Advertisement</button>
 
     <table>

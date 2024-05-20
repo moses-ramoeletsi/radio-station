@@ -109,6 +109,7 @@
                 Radio Station
             </div>
             <div class="desktop-nav">
+                <a href="admin.php">Home</a>
                 <a href="news.php">News</a>
                 <a href="radio_programs.php">Schedule</a>
                 <a href="advertise.php">Advertisement</a>
@@ -117,6 +118,7 @@
             </div>
         </div>
         <div class="mobile-nav" id="mobile-nav">
+            <a href="admin.php">Home</a>
             <a href="news.php">News</a>
             <a href="radio_programs.php">Schedule</a>
             <a href="adertise.php">Advertisements</a>

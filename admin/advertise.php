@@ -2,7 +2,7 @@
 include('../includes/db_connection.php');
 
 
-$stmt = $pdo->query("SELECT * FROM advertisements");
+$stmt = $pdo->query("SELECT * FROM advertisements ORDER BY advert_id DESC");
 $advertisements = $stmt->fetchAll(PDO::FETCH_ASSOC);
 ?>
 
@@ -18,11 +18,12 @@ $advertisements = $stmt->fetchAll(PDO::FETCH_ASSOC);
 <body>
 <?php include ('admin_header.php'); ?>    
     <h1>Advertise</h1>
-    <a href="admin.php">Back</a>
     <button onclick="location.href='add_advertisement.php'">Add Advertisement</button>
     
     <?php foreach ($advertisements as $advert): ?>
         <div class="card">
+
+            <h4><?= $advert['created_date'] ?></h4>
             <h2><?= $advert['name'] ?></h2>
             <p><?= $advert['product_name'] ?></p>
             <p><?= $advert['price'] ?></p>

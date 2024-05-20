@@ -12,7 +12,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $location = $_POST['location'];
         $contacts = $_POST['contacts'];
         
-        $stmt = $pdo->prepare("UPDATE advertisements SET name=?, product_name=?, price =?, description=?, location=?, contacts=? WHERE advert_id=?");
+        $stmt = $pdo->prepare("UPDATE advertisements SET name=?, product_name=?, price =?, description=?, location=?, contacts=?,  created_date =CURRENT_TIMESTAMP WHERE advert_id=?");
         $success = $stmt->execute([$name, $product_name, $price, $description, $location, $contacts, $id]);
 
         if ($success) {
