@@ -1,9 +1,14 @@
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
         body {
             font-family: Arial, sans-serif;
             margin: 0;
-        padding: 0;
+            padding: 0;
         }
 
         .sticky {
@@ -20,7 +25,7 @@
             border-bottom: 1px solid gray;
             display: flex;
             align-items: center;
-            justify-content: space-around;
+            justify-content: space-between;
         }
 
         .nav-logo {
@@ -80,6 +85,48 @@
             outline: none;
         }
 
+        .audio-controls {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .audio-controls button {
+            background: none;
+            border: none;
+            color: white;
+            cursor: pointer;
+            font-size: 1.25rem;
+        }
+
+        .audio-controls button:focus {
+            outline: none;
+        }
+
+        .persistent-player {
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+            background-color: #130f2b;
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 0.5rem 0;
+        }
+
+        .persistent-player button {
+            background: none;
+            border: none;
+            color: white;
+            cursor: pointer;
+            font-size: 1.25rem;
+        }
+
+        .persistent-player button:focus {
+            outline: none;
+        }
+
         @media (min-width: 768px) {
             .desktop-nav {
                 display: flex;
@@ -99,7 +146,8 @@
             }
         }
     </style>
-
+</head>
+<body>
     <div class="sticky">
         <div class="nav-container">
             <button class="hamburger" id="nav-toggle">
@@ -125,13 +173,6 @@
         </div>
     </div>
 
-    <script>
-        document.getElementById('nav-toggle').addEventListener('click', function () {
-            const nav = document.getElementById('mobile-nav');
-            if (nav.style.display === 'block') {
-                nav.style.display = 'none';
-            } else {
-                nav.style.display = 'block';
-            }
-        });
-    </script>
+    <script src="persistent-player.js" defer></script>
+</body>
+</html>

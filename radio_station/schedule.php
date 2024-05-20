@@ -24,7 +24,6 @@
     <?php include ('user_header.php'); ?>
     <h1>Schedule</h1>
     <a href="home.php">Back</a>
-    <?php include('../Live.php'); ?>
     <table>
         <thead>
             <tr>

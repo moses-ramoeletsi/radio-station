@@ -27,8 +27,6 @@
 
 <body>
     <?php include ('user_header.php'); ?>
-    <?php include ('../Live.php'); ?>
-
     <div class="card-container">
         <?php
         
