@@ -12,11 +12,17 @@ $advertisements = $stmt->fetchAll(PDO::FETCH_ASSOC);
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Advertise</title>
     <style>
+         .container {
+            padding: 2rem;
+            max-width: 1300px;
+            margin: auto;
+        }
         /* Your CSS styles */
     </style>
 </head>
 <body>
-<?php include ('admin_header.php'); ?>    
+<?php include ('admin_header.php'); ?> 
+<div class="container">   
     <h1>Advertise</h1>
     <button onclick="location.href='add_advertisement.php'">Add Advertisement</button>
     
@@ -36,5 +42,7 @@ $advertisements = $stmt->fetchAll(PDO::FETCH_ASSOC);
             </div>
         </div>
     <?php endforeach; ?>
+    </div>
+    
 </body>
 </html>

@@ -6,6 +6,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Schedule</title>
     <style>
+         .container {
+            padding: 2rem;
+            max-width: 1300px;
+            margin: auto;
+        }
         table {
             width: 100%;
             border-collapse: collapse;
@@ -22,6 +27,7 @@
 </head>
 <body>
 <?php include ('admin_header.php'); ?>    
+<div class="container">
     <h1>Schedule</h1>
     <button onclick="location.href= 'add_programs_schedule.php'">Add Advertisement</button>
 
@@ -76,5 +82,6 @@
             ?>
         </tbody>
     </table>
+    </div>
 </body>
 </html>

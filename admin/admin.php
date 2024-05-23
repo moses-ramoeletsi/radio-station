@@ -7,6 +7,11 @@
     <title>Radio Station Admin</title>
 
     <style>
+         .container {
+            padding: 2rem;
+            max-width: 1300px;
+            margin: auto;
+        }
         .card-container {
             display: flex;
             flex-wrap: nowrap;
@@ -38,7 +43,8 @@
     </style>
 </head>
 <body>
-<?php include ('admin_header.php'); ?>    
+<?php include ('admin_header.php'); ?>  
+<div class="container">  
 <h1>Admin Page</h1>
 
 <div>
@@ -131,5 +137,6 @@ if (count($today_news) > 0) {
     }
 }
 ?>
+</div>
 </body>
 </html>

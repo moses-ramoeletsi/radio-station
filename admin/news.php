@@ -5,9 +5,17 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>News</title>
+    <style>
+         .container {
+            padding: 2rem;
+            max-width: 1300px;
+            margin: auto;
+        }
+    </style>
 </head>
 <body>
 <?php include ('admin_header.php'); ?>
+<div class="container">
     <h1>Latest News</h1>
     <button onclick="location.href= 'add_news.php'">Add News</button>
     <?php
@@ -36,5 +44,6 @@
         echo "</script>";
     }
     ?>
+</div>
 </body>
 </html>
