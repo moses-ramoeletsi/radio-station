@@ -10,9 +10,9 @@
             font-family: Arial, sans-serif;
         }
         .container {
-            padding: 1rem;
-            max-width: 1550px;
-            margin: 0 auto;
+            padding: 2rem;
+            max-width: 1300px;
+            margin: auto;
         }
         .heading {
             text-align: center;
@@ -20,6 +20,7 @@
         }
         .grid {
             display: grid;
+            grid-template-columns: 1fr;
             gap: 2rem;
         }
         .grid-item {
@@ -28,8 +29,13 @@
         }
         .hstack {
             display: flex;
+            flex-direction: column;
             align-items: flex-start;
+            
             gap: 2rem;
+        }
+        p {
+            text-align: justify;
         }
         .card {
             border-radius: 1rem;
@@ -46,6 +52,9 @@
             .grid {
                 grid-template-columns: repeat(2, 1fr);
             }
+            .hstack {
+                flex-direction: row;
+            }
             .card {
                 flex-direction: row;
             }
@@ -61,7 +70,6 @@
 <?php include ('user_header.php'); ?>
     <div class="container">
         <h1 class="heading">About Us</h1>
-        <a href="home.php">Back</a>
         <div class="grid">
             <div class="grid-item">
                 <div class="hstack">
@@ -77,6 +85,7 @@
                             exploration and advancement of aerospace knowledge.
                         </p>
                     </div>
+                    
                     <div>
                         <h2>Our Vision</h2>
                         <p>

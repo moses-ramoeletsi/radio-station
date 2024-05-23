@@ -18,7 +18,7 @@
         }
 
         .nav-container {
-            background-color: #130f2b;
+            background-color: #DC143C;
             color: white;
             min-height: 60px;
             padding: 0.5rem 1rem;
@@ -163,6 +163,7 @@
                 <a href="advertisement.php">Advertisement</a>
                 <a href="about.php">About us</a>
                 <a href="contacts.php">Contact us</a>
+                <a href="weather_forecast.php">Weather Forcast</a>
             </div>
         </div>
         <div class="mobile-nav" id="mobile-nav">
@@ -172,6 +173,7 @@
             <a href="advertisement.php">Advertisement</a>
             <a href="about.php">About us</a>
             <a href="contacts.php">Contact us</a>
+            <a href="weather_forecast.php">Weather Forcast</a>
         </div>
     </div>
 

@@ -6,6 +6,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Schedule</title>
     <style>
+         .container {
+            padding: 2rem;
+            max-width: 1300px;
+            margin: auto;
+        }
         table {
             width: 100%;
             border-collapse: collapse;
@@ -22,8 +27,8 @@
 </head>
 <body>
     <?php include ('user_header.php'); ?>
+    <div class="container">
     <h1>Schedule</h1>
-    <a href="home.php">Back</a>
     <table>
         <thead>
             <tr>
@@ -62,5 +67,6 @@
             ?>
         </tbody>
     </table>
+    </div>
 </body>
 </html>

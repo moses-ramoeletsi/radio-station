@@ -10,10 +10,9 @@
             font-family: Arial, sans-serif;
         }
         .container {
-            padding: 1rem;
-            max-width: 1550px;
+            padding: 2rem;
+            max-width: 1300px;
             margin: 0 auto;
-            width: 98%;
         }
         .grid {
             display: grid;
@@ -86,7 +85,6 @@
 <body>
     <?php include ('user_header.php'); ?>
     <div class="container">
-    <a href="home.php">Back</a>
         <div class="grid grid-2">
             <div>
                 <div class="center">

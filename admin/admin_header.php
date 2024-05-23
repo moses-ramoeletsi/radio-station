@@ -13,7 +13,7 @@
         }
 
         .nav-container {
-            background-color: #130f2b;
+            background-color: #DC143C;
             color: white;
             min-height: 60px;
             padding: 0.5rem 1rem;
